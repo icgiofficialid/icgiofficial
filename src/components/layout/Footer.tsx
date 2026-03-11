@@ -43,11 +43,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <Mail className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>info@icgi.org</span>
+                <span>icgi.official.id@gmail.com</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <Globe className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>www.icgi.org</span>
+                <span>www.icgi.or.id</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
@@ -60,7 +60,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 gold-text">Follow Us</h4>
             <div className="flex gap-3">
-              {["Facebook", "Instagram", "LinkedIn", "YouTube"].map((social) => (
+              {["Facebook", "Instagram", "YouTube"].map((social) => (
                 <a
                   key={social}
                   href="#"

@@ -1,12 +1,17 @@
 const partners = [
-  "University of Indonesia",
-  "Ministry of Education",
-  "UNESCO Indonesia",
-  "ASEAN Foundation",
-  "National Science Council",
-  "Cultural Affairs Board",
-  "Global Talent Network",
-  "Asia Pacific Council",
+  "GISA INOVASI INDONESIA",
+  "CENTRAL BORNEO SCIENTIFIC ORGANIZATION (CBSO)",
+  "DOCTORABBIT SCIENCE INC",
+  "ESMOEL MANAGEMENT",
+  "PROSPERA CREATIVE HUB",
+  "SOLUSI RISET DAN WIRAUSAHA INDONESIA (RESOLUTION)",
+  "RISETNESIA ACADEMY",
+  "SCIENCE HUNTER INDONESIA (SHI)",
+  "SMA TRENSAINS MUHAMMADIYAH SRAGEN",
+  "Department of Food Science and Technology, IPB University",
+  "ENFORCEMENT, LEADERSHIP AND MANAGEMENT UNIVERSITY",
+  "MALAYSIA INNOVATION INVENTION CREATIVITY ASSOCIATION (MIICA)",
+  "MALAYSIA YOUNG SCIENTISTS ORGANIZATIONS (MYSO)",
 ];
 
 const PartnershipSection = () => {
