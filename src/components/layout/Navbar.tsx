@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-
+import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -30,7 +30,10 @@ const Navbar = () => {
       <div className="container-main flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading font-bold text-xl text-primary">ICGI</span>
+          <img 
+            src={logo} 
+            alt="ICGI Logo" 
+            className="h-12 w-auto object-contain"/>
           <span className="hidden sm:inline text-xs text-muted-foreground font-body leading-tight max-w-[160px]">
             Indonesian Centre for<br />Giftedness Innovation
           </span>
