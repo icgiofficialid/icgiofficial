@@ -17,7 +17,7 @@ import esmoel from "@/assets/logos/ESMOEL.png";
 import IPB from "@/assets/logos/IPB.png";
 import ypbii from "@/assets/logos/YPBII.png";
 import universitaspancasila from "@/assets/logos/Universitas_Pancasila.png";
-import untrunojoyo from "@/assets/logos/Universitas_Trunojoyo_Madura.png";
+import untrunojoyo from "@/assets/logos/Universitas_trunojoyo_madura.png";
 import sman1lumbang from "@/assets/logos/SMAN1_Lumbang.png";
 import miica from "@/assets/logos/miica.png";
 import myso from "@/assets/logos/myso.png";
