@@ -10,7 +10,7 @@ import YPPI from "@/assets/logos/YPPI.png";
 import sman1driyorejo from "@/assets/logos/Negeri_1_Driyorejo.png";
 import doctorabbit from "@/assets/logos/Doctorabbit.png";
 import gisa from "@/assets/logos/GISA.png";
-import risetnesia from "@/assets/logos/Risetnesia.png";
+import risetnesia from "@/assets/logos/RISETNESIA.png";
 import cbso from "@/assets/logos/CBSO.png";
 import prospera from "@/assets/logos/Prospera.png";
 import esmoel from "@/assets/logos/ESMOEL.png";
