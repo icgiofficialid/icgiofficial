@@ -18,11 +18,12 @@ import IPB from "@/assets/logos/IPB.png";
 import ypbii from "@/assets/logos/YPBII.png";
 import universitaspancasila from "@/assets/logos/Universitas_Pancasila.png";
 import untrunojoyo from "@/assets/logos/Universitas_Trunojoyo_Madura.png";
+import sman1lumbang from "@/assets/logos/SMAN1_Lumbang.png";
 import miica from "@/assets/logos/miica.png";
 import myso from "@/assets/logos/myso.png";
 import BachKhoa from "@/assets/logos/bkmsc.jpg";
 import milset from "@/assets/logos/milset.png";
-import segi from "@/assets/logos/SEGI.png";
+import segi from "@/assets/logos/segi.png";
 import aria from "@/assets/logos/aria_iran.png";
 import cadia from "@/assets/logos/cadia.png";
 import elmu from "@/assets/logos/elmu.png";
@@ -44,7 +45,7 @@ const national: Partner[] = [
   { name: "GISA INOVASI INDONESIA", logo: gisa },
   { name: "RISETNESIA ACADEMY", logo: risetnesia },
   { name: "CENTRAL BORNEO SCIENTIFIC ORGANIZATION (CBSO)", logo: cbso },
-  { name: "SMAN 1 LUMBANG", logo: untrunojoyo },
+  { name: "SMAN 1 LUMBANG", logo: sman1lumbang },
   { name: "PROSPERA CREATIVE HUB", logo: prospera },
   { name: "ESMOEL MANAGEMENT", logo: esmoel },
   { name: "Department of Food Science and Technology, IPB University", logo: IPB },
@@ -95,7 +96,6 @@ const PartnerCard = ({ partner, index }: { partner: Partner; index: number }) =>
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Logo */}
       {partner.logo && !hasError ? (
         <img
           src={partner.logo}
@@ -110,7 +110,7 @@ const PartnerCard = ({ partner, index }: { partner: Partner; index: number }) =>
         </span>
       )}
 
-      {/* Tooltip nama muncul saat hover */}
+      {/* Nama muncul saat hover */}
       <div
         className={`absolute inset-0 flex items-center justify-center px-3 transition-all duration-300
           ${hovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -137,7 +137,6 @@ const FadeSection = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// ── Main Page ──
 const Partnership = () => {
   return (
     <div className="min-h-screen">
@@ -168,7 +167,6 @@ const Partnership = () => {
                 {national.length} institutions
               </p>
             </FadeSection>
-
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 max-w-5xl mx-auto">
               {national.map((p, i) => (
                 <FadeSection key={p.name}>
@@ -191,7 +189,6 @@ const Partnership = () => {
                 {international.length} institutions
               </p>
             </FadeSection>
-
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 max-w-5xl mx-auto">
               {international.map((p, i) => (
                 <FadeSection key={p.name}>
