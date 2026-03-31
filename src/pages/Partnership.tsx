@@ -38,7 +38,7 @@ interface Partner {
 const national: Partner[] = [
   { name: "SMA TRENSAINS MUHAMMADIYAH SRAGEN", logo: trensains },
   { name: "SOLUSI RISET DAN WIRAUSAHA INDONESIA (RESOLUTION)", logo: resolution },
-  { name: "INDONESIAN YOUNG SCIENTISTS ASSOCIATION (IYSA)", logo: IYSA },
+  { name: "INDONESIAN YOUNG SCIENTIST ASSOCIATION (IYSA)", logo: IYSA },
   { name: "YAYASAN PRESTASI PENDIDIK INDONESIA (YPPI)", logo: YPPI },
   { name: "SMAN 1 DRIYOREJO GRESIK", logo: sman1driyorejo },
   { name: "DOCTORABBIT SCIENCE INC", logo: doctorabbit },
@@ -60,7 +60,7 @@ const international: Partner[] = [
   { name: "Bach Khoa Math and Science Club (BKMSC)", logo: BachKhoa },
   { name: "MILSET ASIA", logo: milset },
   { name: "SEGI UNIVERSITY", logo: segi },
-  { name: "ARIA INVENTORS ASSOCIATION (IRAN)", logo: aria },
+  { name: "ARIA INVENTORS ASSOCIATION", logo: aria },
   { name: "CADIA", logo: cadia },
   { name: "ENFORCEMENT, LEADERSHIP AND MANAGEMENT UNIVERSITY", logo: elmu },
   { name: "INTOC GLOBAL", logo: intoc },

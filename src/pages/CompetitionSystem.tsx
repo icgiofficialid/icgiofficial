@@ -52,7 +52,7 @@ const CompetitionSystem = () => {
         <section className="section-padding bg-card">
           <div className="container-main">
             <h2 className="section-title text-center mb-4">Academic Competition</h2>
-            <p className="section-subtitle text-center mb-12">Score-based awarding: 80% score allocation, 20% finalist recognition</p>
+            {/* <p className="section-subtitle text-center mb-12">Score-based awarding: 80% score allocation, 20% finalist recognition</p> */}
 
             <div className="space-y-4 max-w-3xl mx-auto mb-12">
               {academicSteps.map((step, i) => (
