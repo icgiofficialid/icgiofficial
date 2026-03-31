@@ -33,7 +33,7 @@ const CTASection = ({ hideJoinSection = false, hideContactForm = false }: CTASec
 
     if (method === "whatsapp") {
       const text = encodeURIComponent(
-        `Halo ICGI! 👋\n\n*Nama:* ${name}\n*No. HP:* ${phone || "-"}\n*Email:* ${contact}\n\n*Pesan:*\n${message}`
+        `Halo ICGI! \n\n*Nama:* ${name}\n*No. HP:* ${phone || "-"}\n*Email:* ${contact}\n\n*Pesan:*\n${message}`
       );
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
     } else {
