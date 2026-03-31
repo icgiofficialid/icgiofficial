@@ -82,9 +82,9 @@ const Membership = () => {
             <p className="font-body text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
               Become a member today and start your journey toward global recognition.
             </p>
-            <a href="mailto:info@icgi.org" className="btn-accent text-base px-12 py-4">
+            <Link to="/contact" className="btn-accent text-base px-10 py-4">
               Join Membership
-            </a>
+            </Link>
           </div>
         </section>
       </main>

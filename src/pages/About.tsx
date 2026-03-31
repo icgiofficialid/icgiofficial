@@ -202,7 +202,7 @@ const About = () => {
         </section>
 
         {/* Expert Team */}
-        <section className="section-padding bg-background">
+        {/* <section className="section-padding bg-background">
           <div className="container-main">
             <h2 className="section-title text-center mb-10">Expert Team</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
@@ -211,7 +211,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
       </main>
       <Footer />

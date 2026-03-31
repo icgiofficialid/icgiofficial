@@ -17,6 +17,7 @@ const navLinks = [
   { label: "Competition System", href: "/competition-system" },
   { label: "Partnership", href: "/partnership" },
   { label: "Membership", href: "/membership" },
+  
 ];
 
 const Navbar = () => {

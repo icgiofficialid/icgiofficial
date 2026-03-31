@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Building2, Globe, Handshake } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import trensains from "@/assets/logos/TRENSAINS.jpg";
 import resolution from "@/assets/logos/Resolution.png";
@@ -221,9 +222,9 @@ const Partnership = () => {
               <p className="font-body text-primary-foreground/70 text-lg max-w-xl mx-auto mb-8">
                 Join our network of prestigious institutions and organizations. Together, we can create greater opportunities for gifted individuals worldwide.
               </p>
-              <a href="mailto:info@icgi.org" className="btn-accent text-base px-10 py-4">
+              <Link to="/contact" className="btn-accent text-base px-10 py-4">
                 Contact Us
-              </a>
+              </Link>
             </div>
           </section>
         </FadeSection>

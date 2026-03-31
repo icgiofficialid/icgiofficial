@@ -19,7 +19,7 @@ const Index = () => {
         <TimelineSection />
         <PartnershipSection />
         <MembershipSection />
-        <CTASection />
+        <CTASection hideContactForm />
       </main>
       <Footer />
     </div>

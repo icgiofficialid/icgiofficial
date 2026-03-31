@@ -43,7 +43,9 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <Mail className="w-4 h-4 mt-0.5 shrink-0" />
-                <span>icgi.official.id@gmail.com</span>
+                <Link to="/Contact" className="hover:text-accent transition-colors">
+                  icgi.official.id@gmail.com
+                </Link>
               </li>
               <li className="flex items-start gap-2 text-sm text-secondary-foreground/70">
                 <Globe className="w-4 h-4 mt-0.5 shrink-0" />
