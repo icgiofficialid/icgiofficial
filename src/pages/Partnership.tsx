@@ -84,10 +84,11 @@ const useFadeIn = () => {
   return { ref, visible };
 };
 
-// ── Partner Card dengan hover tooltip ──
+// ── Partner Card dengan hover tooltip + mobile-safe loading ──
 const PartnerCard = ({ partner, index }: { partner: Partner; index: number }) => {
   const [hasError, setHasError] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <div
@@ -97,15 +98,25 @@ const PartnerCard = ({ partner, index }: { partner: Partner; index: number }) =>
       onMouseLeave={() => setHovered(false)}
     >
       {partner.logo && !hasError ? (
-        <img
-          src={partner.logo}
-          alt={`Logo ${partner.name}`}
-          className={`h-36 w-full object-contain transition-all duration-300 ease-out
-            ${hovered ? 'scale-110 opacity-30 blur-[1px]' : 'scale-100 opacity-100'}`}
-          onError={() => setHasError(true)}
-        />
+        <>
+          {/* Skeleton shimmer saat gambar belum load */}
+          {!loaded && (
+            <div className="absolute inset-4 rounded-lg bg-gray-100 animate-pulse" />
+          )}
+          <img
+            src={partner.logo}
+            alt={`Logo ${partner.name}`}
+            loading="eager"
+            decoding="async"
+            onLoad={() => setLoaded(true)}
+            onError={() => setHasError(true)}
+            className={`h-36 w-full object-contain transition-all duration-300 ease-out
+              ${loaded ? 'opacity-100' : 'opacity-0'}
+              ${hovered ? 'scale-110 opacity-30 blur-[1px]' : 'scale-100'}`}
+          />
+        </>
       ) : (
-        <span className="font-heading font-semibold text-xs text-foreground leading-snug text-center">
+        <span className="font-heading font-semibold text-xs text-foreground leading-snug text-center px-2">
           {partner.name}
         </span>
       )}
@@ -113,7 +124,7 @@ const PartnerCard = ({ partner, index }: { partner: Partner; index: number }) =>
       {/* Nama muncul saat hover */}
       <div
         className={`absolute inset-0 flex items-center justify-center px-3 transition-all duration-300
-          ${hovered ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          ${hovered && loaded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
       >
         <p className="text-[11px] font-semibold text-gray-700 text-center leading-snug">
           {partner.name}

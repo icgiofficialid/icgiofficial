@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import gisa from '@/assets/logos/GISA.png';
 import cbso from '@/assets/logos/CBSO.png';
 import risetnesia from '@/assets/logos/RISETNESIA.png';
@@ -32,37 +32,56 @@ const partners = [
 const duplicated = [...partners, ...partners];
 
 const PartnershipSection: React.FC = () => {
+ 
+  const [allLoaded, setAllLoaded] = useState(false);
+  const [loadedCount, setLoadedCount] = useState(0);
+
+  useEffect(() => {
+    if (loadedCount >= partners.length) {
+      setAllLoaded(true);
+    }
+  }, [loadedCount]);
+
+  const handleImageLoad = () => {
+    setLoadedCount((prev) => prev + 1);
+  };
+
   return (
     <section className="py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-3 tracking-tight">
           Our Partners
         </h2>
-        <p className="text-gray-500 mb-14 max-w-xl mx-auto text-md leading-relaxed">
+        <p className="text-gray-500 mb-14 max-w-xl mx-auto text-sm leading-relaxed">
           Collaborating with leading institutions to deliver world-class programs.
         </p>
       </div>
 
       <div className="relative w-full overflow-hidden">
         {/* Fade kiri */}
-        <div className="absolute left-0 top-0 h-full w-24 z-10 pointer-events-none bg-gradient-to-r from-gray-50 to-transparent" />
+        <div className="absolute left-0 top-0 h-full w-16 md:w-24 z-10 pointer-events-none bg-gradient-to-r from-gray-50 to-transparent" />
         {/* Fade kanan */}
-        <div className="absolute right-0 top-0 h-full w-24 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-16 md:w-24 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
 
+        {/* Track — animasi hanya mulai setelah semua gambar load */}
         <div
-          className="flex gap-5 w-max animate-marquee hover:[animation-play-state:paused]"
-          style={{ animationDuration: '30s' }}
+          className={`flex w-max ${allLoaded ? 'animate-marquee' : ''} hover:[animation-play-state:paused]`}
+          style={{ animationDuration: '30s', gap: '2rem' }}
         >
           {duplicated.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
               className="group flex items-center justify-center shrink-0"
               title={partner.name}
+              style={{ width: '160px', height: '100px' }}
             >
               <img
                 src={partner.logo}
                 alt={`Logo ${partner.name}`}
-                className="w-72 h-44 object-contain transition-transform duration-300 ease-out group-hover:scale-110"
+                loading="eager"
+                decoding="async"
+                onLoad={index < partners.length ? handleImageLoad : undefined}
+                className="w-full h-full object-contain transition-transform duration-300 ease-out group-hover:scale-110"
               />
             </div>
           ))}
