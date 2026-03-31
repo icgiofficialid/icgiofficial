@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
+
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
@@ -28,18 +29,20 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container-main flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <img 
-            src={logo} 
-            alt="ICGI Logo" 
-            className="h-12 w-auto object-contain"/>
-          <span className="hidden sm:inline text-xs text-muted-foreground font-body leading-tight max-w-[160px]">
+
+        {/* Kiri: Logo + Span */}
+        <Link to="/" className="flex items-center gap-2 shrink-0">
+          <img
+            src={logo}
+            alt="ICGI Logo"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
+          <span className="text-xs sm:text-sm md:text-base text-muted-foreground font-body leading-tight max-w-[140px] sm:max-w-[180px] md:max-w-[220px]">
             Indonesian Centre for<br />Giftedness Innovation
           </span>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav Links (hanya tampil di lg ke atas) */}
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) =>
             link.children ? (
@@ -61,7 +64,7 @@ const Navbar = () => {
                   <ChevronDown className="w-3.5 h-3.5" />
                 </Link>
                 {programsOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-52 bg-card rounded-lg shadow-lg border border-border py-2 animate-fade-in">
+                  <div className="absolute top-full left-0 mt-1 w-52 bg-card rounded-lg shadow-lg border border-border py-2 z-50">
                     {link.children.map((child) => (
                       <Link
                         key={child.label}
@@ -93,19 +96,27 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          className="lg:hidden p-2 text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Kanan mobile: Join ICGI + Hamburger */}
+        <div className="flex lg:hidden items-center gap-2">
+          <Link
+            to="/membership"
+            className="btn-primary text-xs py-1.5 px-3"
+          >
+            Join ICGI
+          </Link>
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-card border-t border-border animate-fade-in">
+        <div className="lg:hidden bg-card border-t border-border">
           <div className="container-main py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.label}>
@@ -115,7 +126,7 @@ const Navbar = () => {
                   className={`block px-4 py-3 text-sm font-heading font-medium rounded-md transition-colors ${
                     isActive(link.href)
                       ? "text-primary bg-primary/5"
-                      : "text-foreground hover:text-primary"
+                      : "text-foreground hover:text-primary hover:bg-primary/5"
                   }`}
                 >
                   {link.label}
@@ -136,15 +147,6 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <div className="pt-2">
-              <Link
-                to="/membership"
-                onClick={() => setMobileOpen(false)}
-                className="btn-primary w-full text-center text-xs py-2"
-              >
-                Join ICGI
-              </Link>
-            </div>
           </div>
         </div>
       )}
