@@ -35,7 +35,14 @@ const CTASection = ({ hideJoinSection = false, hideContactForm = false }: CTASec
       const text = encodeURIComponent(
         `Halo ICGI! \n\n*Nama:* ${name}\n*No. HP:* ${phone || "-"}\n*Email:* ${contact}\n\n*Pesan:*\n${message}`
       );
-      window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      const waUrl = `whatsapp://send?phone=${WHATSAPP_NUMBER}&text=${text}`;
+      const waWeb = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+      window.location.href = waUrl;
+      setTimeout(() => {
+        window.location.href = waWeb;
+      }, 1500);
+      
     } else {
       const subject = encodeURIComponent(`Contact from ${name} - ICGI`);
       const body = encodeURIComponent(
