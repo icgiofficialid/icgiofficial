@@ -44,15 +44,12 @@ const CTASection = ({ hideJoinSection = false, hideContactForm = false }: CTASec
       }, 1500);
       
     } else {
-      const subject = encodeURIComponent(`Contact from ${name} - ICGI`);
-      const body = encodeURIComponent(
-        `Nama: ${name}\nNo. HP: ${phone || "-"}\n\nPesan:\n${message}`
-      );
-      window.open(
-        `mailto:info@icgi.official.id@gmail.com?subject=${subject}&body=${body}&from=${contact}`,
-        "_blank"
-      );
-    }
+    const subject = encodeURIComponent(`Contact from ${name} - ICGI`);
+    const body = encodeURIComponent(
+      `Nama: ${name}\nEmail: ${contact}\nNo. HP: ${phone || "-"}\n\nPesan:\n${message}`
+    );
+    window.location.href = `mailto:icgi.official.id@gmail.com?subject=${subject}&body=${body}`;
+  }
 
     setSent(true);
     setForm({ name: "", contact: "", phone: "", message: "" });
