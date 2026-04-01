@@ -76,15 +76,6 @@ const CTASection = ({ hideJoinSection = false, hideContactForm = false }: CTASec
                 Join ICGI Now
               </Link>
             </div>
-
-            {/* Divider */}
-            <div className="flex items-center gap-4 mb-12 max-w-2xl mx-auto">
-              <div className="flex-1 h-px bg-primary-foreground/20" />
-              <span className="font-heading text-primary-foreground/50 text-sm tracking-widest uppercase">
-                Indonesian Centre for Giftedness Innovation
-              </span>
-              <div className="flex-1 h-px bg-primary-foreground/20" />
-            </div>
           </>
         )}
 

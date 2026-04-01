@@ -175,9 +175,7 @@ const Partnership = () => {
                 <Building2 className="w-6 h-6 text-primary" />
                 <h2 className="section-title mb-0">National Partnership</h2>
               </div>
-              <p className="text-center text-sm text-muted-foreground mb-10 -mt-6">
-                {national.length} institutions
-              </p>
+
             </FadeSection>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 max-w-5xl mx-auto">
               {national.map((p, i) => (
@@ -197,9 +195,7 @@ const Partnership = () => {
                 <Globe className="w-6 h-6 text-accent" />
                 <h2 className="section-title mb-0">International Partnership</h2>
               </div>
-              <p className="text-center text-sm text-muted-foreground mb-10 -mt-6">
-                {international.length} institutions
-              </p>
+
             </FadeSection>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 max-w-5xl mx-auto">
               {international.map((p, i) => (
