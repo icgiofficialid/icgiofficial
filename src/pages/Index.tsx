@@ -8,6 +8,7 @@ import PartnershipSection from "@/components/home/PartnershipSection";
 import MembershipSection from "@/components/home/MembershipSection";
 import CTASection from "@/components/home/CTASection";
 import GallerySection from "@/components/home/GallerySection";
+import NewsSection from "@/components/home/NewsSection";
 
 const Index = () => {
   return (
@@ -17,9 +18,9 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <DivisionsSection />
-        <TimelineSection />
         <PartnershipSection />
         <MembershipSection />
+        <NewsSection />
         <GallerySection />
         <CTASection hideContactForm />
       </main>

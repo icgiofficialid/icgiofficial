@@ -17,6 +17,8 @@ const navLinks = [
   { label: "Competition System", href: "/competition-system" },
   { label: "Partnership", href: "/partnership" },
   { label: "Gallery", href: "/gallery" },
+  { label: "News", href: "/news" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {

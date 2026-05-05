@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import News from "./pages/News";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<News />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
